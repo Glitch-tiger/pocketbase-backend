@@ -1,14 +1,4 @@
-# PocketBase данные
-pb_data/
-pb_migrations/
-
-# Windows файлы
-pocketbase.exe
-*.exe
-
-# Логи
+# Оставить только это:
 *.log
-
-# Системные файлы
 .DS_Store
 Thumbs.db

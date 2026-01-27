@@ -1,7 +1,6 @@
 [build]
-builder = "NIXPACKS"
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "wget -O /tmp/pocketbase https://github.com/pocketbase/pocketbase/releases/download/v0.22.14/pocketbase_0.22.14_linux_amd64 && chmod +x /tmp/pocketbase && /tmp/pocketbase serve --http=0.0.0.0:$PORT"
-healthcheckPath = "/api/health"
-healthcheckTimeout = 60
+startCommand = "/usr/local/bin/pocketbase serve --http=0.0.0.0:$PORT --dir=/app/pb_data"
