@@ -9,7 +9,5 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v0.22.14/poc
 
 COPY pb_data /pb_data
 
-# Railway автоматически подставляет PORT в переменные окружения
-# Используем стандартный порт 8080 как fallback
-ENTRYPOINT ["./pocketbase"]
-CMD ["serve", "--http=0.0.0.0:8080", "--dir=/pb_data"]
+# Фиксированный порт 8080 - Railway правильно его пробросит
+CMD ./pocketbase serve --http=0.0.0.0:8080 --dir=/pb_data
